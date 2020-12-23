@@ -1,4 +1,5 @@
 # project_wiki_entry
+
 DESCRIPTION:
 
 In this repository, you will find the analyzes of Wikipedias entries by languages and its ratio to population and GDP per capita
@@ -6,28 +7,36 @@ In this repository, you will find the analyzes of Wikipedias entries by language
 DATA:
 
 wiki entry table : https://meta.wikimedia.org/wiki/List_of_Wikipedias
+
 population : https://raw.githubusercontent.com/datasets/population/master/data/population.csv
+
 GDP Per Capita: https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)_per_capita
 
 
 examples of some important used methods:
 
+
 #to download data from github for language and countries
 url = 'https://raw.githubusercontent.com/annexare/Countries/master/data/countries.json'
 count_lang = pd.read_json(url).T
 
+
 #to check if there is any empty list at languages column
 count_lang[count_lang.languages.apply(lambda x: len(x)<1)]
+
 
 #to get first value from the list at languages column
 count_lang['first_language']=count_lang.languages.apply(lambda x: x[0])
 
+
 #to assign a population of country for each wiki language
 wiki=pd.merge(wiki, pop, right_on='Country Name', left_on='name')
+
 
 #visualize correlation for languages
 plt.figure(figsize=(12,10))
 sns.heatmap(df_wiki_ratio.corr(), annot=True, vmin=0.80000, vmax=1.00000,fmt='f')
+
 
 #visualize groups by languages
 fig, axs = plt.subplots(nrows=2, ncols=3, figsize=(20, 20))
@@ -44,6 +53,7 @@ axs[0,2].set_xlabel('Users')
 df_wiki_ratio['ratio_Active_Users'].sort_values().tail(5).plot.barh(ax=axs[1,2])
 axs[1,2].set_xlabel('Active Users')
 plt.tight_layout()
+
 
 Some insights:
 
