@@ -71,7 +71,7 @@ Some insights:
 
 4) For world languages, such as English, there are a significant amount of entries. Since they are spoken from different countries and nations, those numbers may mislead us to understand some insights. In order to cope with this problem, it is divided into the total population of countries, in which their given first languages in the dataset respectively. Moreover some small countries are eliminated to get better understandings for big countries 
 
-	4.1) By dividing the population, some world languages lose their power as compare to row dates. 
+	4.1) By dividing the population, some world languages lose their power as compare to row datas. 
 
 	4.2) Since it is only one language for each country, it causes dropping for many languages around the world, such as Cebuan . On the other hand, it also shows the importance of citizens living in other countries, such as Catalans. 
 
